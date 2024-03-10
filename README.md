@@ -1,5 +1,4 @@
 # MRAuth SDK
-[ ![Download](https://api.bintray.com/packages/govorovsky/mailru/auth-sdk-pub/images/download.svg) ](https://bintray.com/govorovsky/mailru/auth-sdk-pub/_latestVersion)
 
 ### Описание
 MRAuth SDK — это библиотека, предназначенная для облегчения авторизации Mail.ru OAuth.
@@ -34,7 +33,7 @@ val fingerprint = Utils.getCertificateFingerprint(context, "ru.mail.sdk.sample",
 
     ```java
     repositories {
-       jcenter()
+        mavenCentral()
     }
     
     dependencies {
