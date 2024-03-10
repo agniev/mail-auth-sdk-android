@@ -3,11 +3,11 @@ apply plugin: 'com.android.library'
 ext.publication = true
 
 android {
-    compileSdkVersion 29
+    compileSdk 34
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 29
+        minSdkVersion 24
+        targetSdkVersion 34
         consumerProguardFiles 'proguard-rules.pro'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
