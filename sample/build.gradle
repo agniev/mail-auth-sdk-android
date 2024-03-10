@@ -29,7 +29,9 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     packagingOptions {
-        exclude 'META-INF/proguard/coroutines.pro'
+        resources {
+            excludes += ['META-INF/proguard/coroutines.pro']
+        }
     }
 
     android.defaultConfig.manifestPlaceholders = [
@@ -52,6 +54,7 @@ android {
             signingConfig signingConfigs.releaseConfig
         }
     }
+    namespace 'ru.mail.sdk.sample'
 
 }
 
