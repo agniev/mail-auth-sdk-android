@@ -1,4 +1,7 @@
-apply plugin: 'com.android.library'
+plugins {
+    id 'com.android.library'
+    id 'maven-publish'
+}
 
 ext.publication = true
 
@@ -20,6 +23,11 @@ android {
         }
     }
     namespace 'ru.mail.auth.sdk.pub'
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 repositories {
@@ -31,4 +39,18 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.browser:browser:1.0.0'
     testImplementation 'junit:junit:4.12'
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.findByName('release')
+
+                groupId = 'com.github.agniev'
+                artifactId = 'mail-ru-auth-sdk'
+                version = '1.0'
+            }
+        }
+    }
 }
